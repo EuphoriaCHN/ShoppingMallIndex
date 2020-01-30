@@ -1,0 +1,32 @@
+/* 八个屏幕的背景 */
+.section-1 {
+    background: #fadd67 url("../images/t1fpyqfltdxxaiulhh-990-600.png") no-repeat center bottom;
+}
+
+.section-2 {
+    background: #84a2d4 url("../images/t1zdgpfi8exxca6rfn-2000-600.png") no-repeat center bottom;
+}
+
+.section-3 {
+    background: #ef674d;
+}
+
+.section-4 {
+    background: #ffeedd url("../images/t1iresfnxaxxca6rfn-2000-600.png") no-repeat center bottom;
+}
+
+.section-5 {
+    background: #d04759 url("../images/t1yisqfa4exxa3gmkg-2000-1500.png");
+}
+
+.section-6 {
+    background: #84d9ed url("../images/t1dvj.fn0gxxb0_fua-2500-600.png") no-repeat 25% 100%;
+}
+
+.section-7 {
+    background: #8ac060 url("../images/t1wf1tfctaxxa3gmkg-2000-1500.png") no-repeat 50% 100%;
+}
+
+.section-8 {
+    background: url("../images/ksgw.png");
+}
