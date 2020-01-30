@@ -44,6 +44,7 @@
 /* START 第二个屏幕 */
 .section-2 {
     background: #84a2d4 url("../images/t1zdgpfi8exxca6rfn-2000-600.png") no-repeat center bottom;
+    z-index: 2;
 }
 
 /* 第二个屏幕中的电脑屏幕显示 */
@@ -121,9 +122,87 @@
 }
 /* END 第二个屏幕 */
 
+/* START 第三个屏幕 */
 .section-3 {
     background: #ef674d;
 }
+
+.main-03 {
+    position: absolute;
+    width: 700px;
+    height: 500px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: 80px;
+    background: url("../images/main.png") no-repeat center center;
+}
+
+/* 第三个窗口的选择操作盒子 */
+.select {
+    width: 300px;
+    height: 250px;
+    position: absolute;
+    bottom: 0;
+    right: 8px;
+}
+
+/* 购物车按钮 */
+.btn-01 {
+    position: absolute;
+    bottom: 30px;
+}
+
+.btn-01-a {
+    display: none;
+    z-index: 2;
+}
+
+/* 选择颜色 */
+.img-01 {
+    position: absolute;
+    top: 0;
+}
+
+.img-01-a {
+    display: none;
+    z-index: 2;
+}
+
+/* 第三屏中的沙发 */
+.shirt-02-207,
+.t1f {
+    position: absolute;
+    left: 115px;
+    bottom: 200px;
+    display: none;
+}
+
+/* 最开始位于第二屏中的沙发 */
+.shirt-02 {
+    position: absolute;
+    bottom: 339px;
+    left: 393px;
+    width: 102px;
+    z-index: 10;
+    display: none;
+}
+
+/* 用来遮挡第二个屏幕中原来的沙发的盒子 */
+.shirt-cover {
+    position: absolute;
+    bottom: 334px;
+    right: 496px;
+    width: 101px;
+    height: 90px;
+    background-color: #ffffff;
+    z-index: 5;
+    display: none;
+}
+/* END 第三个屏幕 */
 
 .section-4 {
     background: #ffeedd url("../images/t1iresfnxaxxca6rfn-2000-600.png") no-repeat center bottom;
