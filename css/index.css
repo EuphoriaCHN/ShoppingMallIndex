@@ -1,7 +1,45 @@
-/* 八个屏幕的背景 */
+/* 直接进入购物中心 */
+.go {
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    border: none;
+}
+
+.go:focus {
+    outline: none;
+}
+
+/* 八个屏幕 */
+
+/* START 第一个屏幕 */
 .section-1 {
     background: #fadd67 url("../images/t1fpyqfltdxxaiulhh-990-600.png") no-repeat center bottom;
 }
+
+/* 小飞艇 */
+.fly {
+    position: absolute;
+    right: 20%;
+    top: 10%;
+}
+
+/* 漂浮的小沙发图标 */
+.shirt-01 {
+    position: absolute;
+    left: 50%;
+    margin-left: -200px;
+    bottom: 335px;
+}
+
+/* 第一个屏幕漂浮但没有动画的小图标 */
+.goods {
+    position: absolute;
+    left: 50%;
+    margin-left: -410px;
+    bottom: 150px;
+}
+/* END 第一个屏幕 */
 
 .section-2 {
     background: #84a2d4 url("../images/t1zdgpfi8exxca6rfn-2000-600.png") no-repeat center bottom;
@@ -34,16 +72,4 @@
 /* 小圆点导航 */
 #fp-nav ul li a span {
     background-color: #333333;
-}
-
-/* 直接进入购物中心 */
-.go {
-    position: fixed;
-    top: 5%;
-    right: 5%;
-    border: none;
-}
-
-.go:focus {
-    outline: none;
 }
