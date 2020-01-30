@@ -30,3 +30,20 @@
 .section-8 {
     background: url("../images/ksgw.png");
 }
+
+/* 小圆点导航 */
+#fp-nav ul li a span {
+    background-color: #333333;
+}
+
+/* 直接进入购物中心 */
+.go {
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    border: none;
+}
+
+.go:focus {
+    outline: none;
+}
