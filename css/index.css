@@ -73,3 +73,33 @@
 #fp-nav ul li a span {
     background-color: #333333;
 }
+
+/* 动画 */
+
+/* 第一页的小飞艇 */
+.fly-up-and-down {
+    animation: flyUpAndDown 3s ease-in-out infinite;
+}
+
+@keyframes flyUpAndDown {
+    50% {
+        top: 18%;
+    }
+    100% {
+        top: 10%;
+    }
+}
+
+/* 第一页的小沙发 */
+.shirt-01-up-and-down {
+    animation: shirtUpAndDown 2.5s ease-in-out infinite;
+}
+
+@keyframes shirtUpAndDown {
+    50% {
+        bottom: 375px;
+    }
+    100% {
+        bottom: 335px;
+    }
+}
