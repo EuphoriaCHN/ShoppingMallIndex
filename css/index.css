@@ -41,9 +41,85 @@
 }
 /* END 第一个屏幕 */
 
+/* START 第二个屏幕 */
 .section-2 {
     background: #84a2d4 url("../images/t1zdgpfi8exxca6rfn-2000-600.png") no-repeat center bottom;
 }
+
+/* 第二个屏幕中的电脑屏幕显示 */
+.computer {
+    width: 990px;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: 0;
+}
+
+/* 搜索框 */
+.search {
+    width: 222px;
+    height: 45px;
+    background: url("../images/search.png") no-repeat;
+    position: absolute;
+    right: -50px;
+    bottom: 300px;
+    display: none;
+}
+
+.search-words {
+    position: absolute;
+    right: 30px;
+    top: 3px;
+    display: none;
+}
+
+/* 替换 search 的图片 */
+.search-02-1 {
+    position: absolute;
+    bottom: 300px;
+    right: 370px;
+    display: none;
+}
+
+/* 电脑屏幕中间显示的沙发搜索结果 */
+.goods-02 {
+    position: absolute;
+    height: 100px;
+    bottom: 210px;
+    right: 270px;
+    display: none;
+}
+
+/* 第二个屏幕首先显示的 description */
+.words-01 {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: 550px;
+}
+
+/* 当标准动画完成时，覆盖掉 words-01 的 description */
+.words-02 {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: 550px;
+    display: none;
+}
+/* END 第二个屏幕 */
 
 .section-3 {
     background: #ef674d;
