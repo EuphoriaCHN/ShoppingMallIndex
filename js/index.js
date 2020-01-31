@@ -133,7 +133,7 @@
                         return new Promise(resolve => {
                             $('.mouse-05-a').fadeIn();
                             // 然后把上面的沙发掉下来
-                            $('.section-5-t1f').animate({
+                            $('.section-5-t1f').show().animate({
                                 'bottom': 70
                             }, 1000, () => resolve());
                         });
@@ -147,6 +147,81 @@
                     }).then(() => {
                         // 最后让标题进行 3D 变换
                         $('.words-05').addClass('words-05-a');
+                    });
+                } else if (index === 5 && nextIndex === 6) {
+                    // 从第五个屏幕过渡到第六个屏幕
+                    new Promise(resolve => {
+                        // 第五个屏幕的沙发需要掉下来
+                        $('.section-5-t1f').animate({
+                            'bottom': -(windowHeight - 500),
+                            'left': '40%',
+                            'width': 65
+                        }, 1500, () => resolve());
+                        // 同时让盒子想右移动，去接沙发
+                        $('.box-06').animate({
+                            'left': '38%',
+                        }, 1500);
+                    }).then(() => {
+                        return new Promise(resolve => {
+                            // 然后让缩小的沙发隐藏就好
+                            $('.section-5-t1f').hide();
+
+                            // 在让盒子向下移动
+                            $('.box-06').animate({
+                                'bottom': 40
+                            }, 500, () => resolve());
+                        });
+                    }).then(() => {
+                        return new Promise(resolve => {
+                            // 再让盒子消失就好
+                            $('.box-06').hide();
+
+                            // 同时移动这个背景，造成小车在移动的效果
+                            $('.section-6').animate({
+                                'backgroundPositionX': '100%'
+                            }, 4000, () => resolve());
+
+                            // 显示遵义市 88 号
+                            $('.pop-06').fadeIn(800);
+
+                            // 同时显示 tips “光的节奏...”
+                            $('.words-06-a').fadeIn(800).animate({
+                                'left': '30%'
+                            }, 4000, 'easeOutElastic');
+                        });
+                    }).then(() => {
+                        return new Promise(resolve => {
+                            $('.pop-06').fadeOut(800);
+                            // 让男人的高度恢复
+                            $('.man-06').animate({
+                                'height': 305,
+                                'bottom': 116,
+                            }, 1000, () => resolve());
+                        });
+                    }).then(() => {
+                        return new Promise(resolve => {
+                            // 再让男人移动
+                            $('.man-06').animate({
+                                'right': 500
+                            }, 500, () => resolve());
+                        });
+                    }).then(() => {
+                        return new Promise(resolve => {
+                            // 将门打开
+                            $('.door').fadeIn(200, () => resolve());
+                        });
+                    }).then(() => {
+                        return new Promise(resolve => {
+                            // 门打开后，将女人显示出来
+                            $('.women-06')
+                                .show()
+                                .animate({
+                                    'right': 350,
+                                    'height': 305
+                                }, 700);
+                            // 同时展示“请收货”
+                            $('.pop-07').slideDown(400);
+                        });
                     });
                 }
             },

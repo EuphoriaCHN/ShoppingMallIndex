@@ -242,6 +242,7 @@
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
     transform: translateX(-50%);
+    z-index: 999;
 }
 
 .shopping-car-shirt {
@@ -281,10 +282,11 @@
 /* START 第五个屏幕 */
 .section-5 {
     background: #d04759 url("../images/t1yisqfa4exxa3gmkg-2000-1500.png");
-    overflow: hidden;
+    /*overflow: hidden;*/
     -webkit-perspective: 1200px;
     -moz-perspective: 1200px;
     perspective: 1200px;
+    z-index: 2;
 }
 
 .words-05 {
@@ -311,14 +313,17 @@
     position: absolute;
     bottom: 700px;
     left: 25%;
+    display: none;
 }
 
+/* 普通的鼠标 */
 .mouse-05 {
     position: absolute;
     right: 20%;
     bottom: 200px;
 }
 
+/* 左键被点击的鼠标 */
 .mouse-05-a {
     display: none;
 }
@@ -328,11 +333,97 @@
     right: 24%;
     bottom: -375px;
 }
+
+/* overflow 只包含了第五个盒子的鼠标和小手，让他们溢出隐藏，从而避免了直接加隐藏连沙发都没了 */
+.overflow {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 /* END 第五个屏幕 */
 
+/* START 第六个屏幕 */
 .section-6 {
     background: #84d9ed url("../images/t1dvj.fn0gxxb0_fua-2500-600.png") no-repeat 25% 100%;
 }
+
+/* 装沙发的黄色小盒子 */
+.box-06 {
+    position: absolute;
+    left: 123px;
+    bottom: 500px;
+    z-index: 3;
+}
+
+/* 运货的小车 */
+.car-06 {
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    z-index: 4;
+}
+
+/* 第六个屏幕天上的云 */
+.cloud-06 {
+    position: absolute;
+    left: 50%;
+    bottom: 550px;
+}
+
+/* 遵义市 88 号 */
+.pop-06 {
+    position: absolute;
+    bottom: 119px;
+    right: 48%;
+    display: none;
+}
+
+/* 抱着沙发的男人 */
+.man-06 {
+    position: absolute;
+    right: 50%;
+    bottom: 0;
+    height: 0;
+}
+
+/* 女人 */
+.women-06 {
+    position: absolute;
+    right: 315px;
+    bottom: 116px;
+    height: 123px;
+    display: none;
+    z-index: 999;
+}
+
+/* 开着的门 */
+.door {
+    position: absolute;
+    right: 285px;
+    bottom: 116px;
+    display: none;
+}
+
+/* 请收货 */
+.pop-07 {
+    position: absolute;
+    right: 445px;
+    bottom: 400px;
+    display: none;
+    z-index: 1000;
+}
+
+/* 最后展示的 tips */
+.words-06-a {
+    position: absolute;
+    left: 10%;
+    bottom: 479px;
+    display: none;
+}
+/* END 第六个屏幕 */
 
 .section-7 {
     background: #8ac060 url("../images/t1wf1tfctaxxa3gmkg-2000-1500.png") no-repeat 50% 100%;
@@ -416,5 +507,16 @@
         -ms-transform: translateZ(100px) rotateY(360deg);
         -o-transform: translateZ(100px) rotateY(360deg);
         transform: translateZ(100px) rotateY(360deg);
+    }
+}
+
+/* 第六个屏幕云彩的运动 */
+.cloud-06-a {
+    animation: cloud06A 45s linear infinite;
+}
+
+@keyframes cloud06A {
+    50% {
+        left: 10%;
     }
 }
