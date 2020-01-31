@@ -122,6 +122,32 @@
                         // 同时也让标题 word-04-a 显示出来
                         $('.words-04-a').fadeIn(800);
                     });
+                } else if (index === 4 && nextIndex === 5) {
+                    // 第四屏到第五屏的过渡
+                    new Promise(resolve => {
+                        // 首先让小手从下往上上升
+                        $('.hand-05').animate({
+                            'bottom': -15
+                        }, 2000, () => resolve());
+                    }).then(() => {
+                        return new Promise(resolve => {
+                            $('.mouse-05-a').fadeIn();
+                            // 然后把上面的沙发掉下来
+                            $('.section-5-t1f').animate({
+                                'bottom': 70
+                            }, 1000, () => resolve());
+                        });
+                    }).then(() => {
+                        return new Promise(resolve => {
+                            // 当沙发落下来后，将 order 收款单上移
+                            $('.order-05').animate({
+                                'bottom': 390
+                            }, 1000, () => resolve());
+                        });
+                    }).then(() => {
+                        // 最后让标题进行 3D 变换
+                        $('.words-05').addClass('words-05-a');
+                    });
                 }
             },
         });

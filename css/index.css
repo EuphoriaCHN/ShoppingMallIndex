@@ -278,9 +278,57 @@
 }
 /* END 第四个屏幕 */
 
+/* START 第五个屏幕 */
 .section-5 {
     background: #d04759 url("../images/t1yisqfa4exxa3gmkg-2000-1500.png");
+    overflow: hidden;
+    -webkit-perspective: 1200px;
+    -moz-perspective: 1200px;
+    perspective: 1200px;
 }
+
+.words-05 {
+    position: absolute;
+    left: 20%;
+    top: 15%;
+    opacity: 0;
+}
+
+.card-05 {
+    position: absolute;
+    left: 20%;
+    bottom: 200px;
+    z-index: 10;
+}
+
+.order-05 {
+    position: absolute;
+    left: 27%;
+    bottom: 270px;
+}
+
+.section-5-t1f {
+    position: absolute;
+    bottom: 700px;
+    left: 25%;
+}
+
+.mouse-05 {
+    position: absolute;
+    right: 20%;
+    bottom: 200px;
+}
+
+.mouse-05-a {
+    display: none;
+}
+
+.hand-05 {
+    position: absolute;
+    right: 24%;
+    bottom: -375px;
+}
+/* END 第五个屏幕 */
 
 .section-6 {
     background: #84d9ed url("../images/t1dvj.fn0gxxb0_fua-2500-600.png") no-repeat 25% 100%;
@@ -346,5 +394,27 @@
     }
     100% {
         left: 50%;
+    }
+}
+
+/* 第五页标题的 3D 变换 */
+.words-05-a {
+    -webkit-animation: words05A 3s;
+    -o-animation: words05A 3s;
+    animation: words05A 3s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+@keyframes words05A {
+    100% {
+        opacity: 1;
+        -webkit-transform: translateZ(100px) rotateY(360deg);
+        -moz-transform: translateZ(100px) rotateY(360deg);
+        -ms-transform: translateZ(100px) rotateY(360deg);
+        -o-transform: translateZ(100px) rotateY(360deg);
+        transform: translateZ(100px) rotateY(360deg);
     }
 }
