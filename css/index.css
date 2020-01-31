@@ -44,7 +44,7 @@
 /* START 第二个屏幕 */
 .section-2 {
     background: #84a2d4 url("../images/t1zdgpfi8exxca6rfn-2000-600.png") no-repeat center bottom;
-    z-index: 2;
+    z-index: 3;
 }
 
 /* 第二个屏幕中的电脑屏幕显示 */
@@ -125,6 +125,7 @@
 /* START 第三个屏幕 */
 .section-3 {
     background: #ef674d;
+    z-index: 2;
 }
 
 .main-03 {
@@ -204,9 +205,78 @@
 }
 /* END 第三个屏幕 */
 
+/* START 第四个屏幕 */
 .section-4 {
     background: #ffeedd url("../images/t1iresfnxaxxca6rfn-2000-600.png") no-repeat center bottom;
 }
+
+.cloud {
+    position: absolute;
+    left: 50%;
+    bottom: 550px;
+}
+
+.words-04 {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: 500px;
+}
+
+.words-04-a {
+    display: none;
+}
+
+/* 整体购物车的盒子 */
+.shopping-car {
+    position: absolute;
+    width: 500px;
+    bottom: 50px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.shopping-car-shirt {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: 200px;
+    z-index: -1;
+    display: none;
+}
+
+/* 购物车消失后的日志 */
+.note {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: 180px;
+    display: none;
+}
+
+.note-info {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    display: none;
+}
+/* END 第四个屏幕 */
 
 .section-5 {
     background: #d04759 url("../images/t1yisqfa4exxa3gmkg-2000-1500.png");
@@ -233,6 +303,8 @@
 
 /* 第一页的小飞艇 */
 .fly-up-and-down {
+    -webkit-animation: flyUpAndDown 3s ease-in-out infinite;
+    -o-animation: flyUpAndDown 3s ease-in-out infinite;
     animation: flyUpAndDown 3s ease-in-out infinite;
 }
 
@@ -247,6 +319,8 @@
 
 /* 第一页的小沙发 */
 .shirt-01-up-and-down {
+    -webkit-animation: shirtUpAndDown 2.5s ease-in-out infinite;
+    -o-animation: shirtUpAndDown 2.5s ease-in-out infinite;
     animation: shirtUpAndDown 2.5s ease-in-out infinite;
 }
 
@@ -256,5 +330,21 @@
     }
     100% {
         bottom: 335px;
+    }
+}
+
+/* 第四页的云彩 */
+.cloud-4-animation {
+    -webkit-animation: cloud4Animation 60s linear infinite;
+    -o-animation: cloud4Animation 60s linear infinite;
+    animation: cloud4Animation 60s linear infinite;
+}
+
+@keyframes cloud4Animation {
+    50% {
+        left: -10%;
+    }
+    100% {
+        left: 50%;
     }
 }

@@ -25,7 +25,7 @@
                             return new Promise(resolve => {
                                 value.animate({
                                     'right': 370
-                                }, 1200, () => resolve());
+                                }, 1200, 'easeOutBack', () => resolve());
                             });
                         }).then(() => {
                             // 然后让“沙发”显示出来
@@ -92,8 +92,36 @@
                     });
                 } else if (index === 3 && nextIndex === 4) {
                     // 从第三个屏幕到第四个屏幕时
-                    $('.shirt-02').hide();
-                    $('.t1f').show();
+                    new Promise(resolve => {
+                        $('.shirt-02').hide();
+                        // 第三个屏幕到第四个屏幕，需要将倾斜的 t1f 沙发落下
+                        $('.t1f').show().animate({
+                            'bottom': -(windowHeight - 220 + 50),
+                            'left': 250
+                        }, 2000, function () {
+                            resolve($(this));
+                        });
+                    }).then(value => {
+                        // 然后将从第三层落下的沙发隐藏掉
+                        value.hide();
+                        // 随后将一开始存在于第四屏购物车中的沙发显示
+                        $('.shopping-car-shirt').show();
+                    }).then(() => {
+                        return new Promise(resolve => {
+                            // 然后购物车就开始向右侧走
+                            $('.shopping-car').animate({
+                                'left': 2000
+                            }, 4000, 'easeInElastic', function () {
+                                resolve();
+                            }); // jQuery easing.js 插件
+                        });
+                    }).then(() => {
+                        // 当购物车移动出屏幕时，需要将 note 显示出来
+                        $('.note').fadeIn(500);
+                        $('.note-info').fadeIn(1000);
+                        // 同时也让标题 word-04-a 显示出来
+                        $('.words-04-a').fadeIn(800);
+                    });
                 }
             },
         });
