@@ -9,9 +9,22 @@ html, body, .section {
     top: 5%;
     right: 5%;
     border: none;
+    z-index: 9999;
 }
 
 .go:focus {
+    outline: none;
+}
+
+/* 下一个屏幕 */
+.next {
+    position: fixed;
+    bottom: 120px;
+    right: 10%;
+    z-index: 9999;
+}
+
+.next:focus {
     outline: none;
 }
 
@@ -584,5 +597,21 @@ html, body, .section {
 @keyframes cloud06A {
     50% {
         left: 10%;
+    }
+}
+
+/* 下一页 */
+.next-animation {
+    -webkit-animation: nextAnimation 1.88s infinite;
+    -o-animation: nextAnimation 1.88s infinite;
+    animation: nextAnimation 1.88s infinite;
+}
+
+@keyframes nextAnimation {
+    50% {
+        bottom: 100px;
+    }
+    100% {
+        bottom: 120px;
     }
 }

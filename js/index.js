@@ -12,8 +12,15 @@
             // 在滚动到第 index 个页面时调用
             afterLoad: function (anchorLink, index) {
                 switch (index) {
+                    case 1:
+                        $('.next').hide();
+                        setTimeout(() => {
+                            $('.next').fadeIn(700);
+                        }, 3000);
+                        break;
                     case 2:
                         new Promise(resolve => {
+                            $('.next').hide();
                             // 将搜索框展示出来
                             $('.search').fadeIn(700, function () {
                                 resolve($(this));
@@ -66,40 +73,28 @@
                             // 当“沙发”的搜索结果变大后，用单独的“沙发”图片和 cover 覆盖掉那个会掉下去的特殊的沙发
                             $('.shirt-cover').show();
                             $('.shirt-02').show();
+                            // 最后展示 next
+                            $('.next').fadeIn(700);
                         });
                         break;
                     case 7:
                         new Promise(resolve => {
+                            $('.next').hide();
                             $('.star').animate({
                                 'width': 120
                             }, 1500, () => resolve());
                         }).then(() => {
                             $('.good-07').fadeIn(700);
+                            // 最后展示 next
+                            $('.next').fadeIn(700);
                         });
                         break;
-                    case 8:
-                        let hand08 = $('.hand-08');
-                        $('.begin-shopping').hover(function () {
-                            $('.btn-08-a').toggle();
-                        });
-                        $(document).on('mousemove', function (e) {
-                            let x = e.pageX - hand08.width() / 2;
-                            let y = e.pageY + 10;
-                            y = Math.max(windowHeight - 449, y);
-                            hand08.css({
-                                'left': x,
-                                'top': y
-                            });
-                        });
-                        $('.again').on('click', function () {
-                            $.fn.fullpage.moveTo(1);
-                            $('img, .move').attr('style', '');
-                        });
                 }
             },
 
             // 在刚刚滚动出去某个页面时触发
             onLeave: function (index, nextIndex, direction) {
+                $('.next').hide();
                 if (index === 2 && nextIndex === 3) {
                     new Promise(resolve => {
                         // 从第二个聘屏幕滑动到第三个屏幕时
@@ -113,6 +108,8 @@
                         // 沙发落下来后，改变第三屏购物车和颜色选择框的背景
                         $('.img-01-a').fadeIn(500);
                         $('.btn-01-a').fadeIn(1000);
+                        // 最后展示 next
+                        $('.next').fadeIn(700);
                     });
                 } else if (index === 3 && nextIndex === 4) {
                     // 从第三个屏幕到第四个屏幕时
@@ -145,6 +142,8 @@
                         $('.note-info').fadeIn(1000);
                         // 同时也让标题 word-04-a 显示出来
                         $('.words-04-a').fadeIn(800);
+                        // 最后展示 next
+                        $('.next').fadeIn(700);
                     });
                 } else if (index === 4 && nextIndex === 5) {
                     // 第四屏到第五屏的过渡
@@ -171,6 +170,8 @@
                     }).then(() => {
                         // 最后让标题进行 3D 变换
                         $('.words-05').addClass('words-05-a');
+                        // 最后展示 next
+                        $('.next').fadeIn(700);
                     });
                 } else if (index === 5 && nextIndex === 6) {
                     // 从第五个屏幕过渡到第六个屏幕
@@ -235,20 +236,48 @@
                             $('.door').fadeIn(200, () => resolve());
                         });
                     }).then(() => {
-                        return new Promise(resolve => {
-                            // 门打开后，将女人显示出来
-                            $('.women-06')
-                                .show()
-                                .animate({
-                                    'right': 350,
-                                    'height': 305
-                                }, 700);
-                            // 同时展示“请收货”
-                            $('.pop-07').slideDown(400);
-                        });
+                        // 门打开后，将女人显示出来
+                        $('.women-06')
+                            .show()
+                            .animate({
+                                'right': 350,
+                                'height': 305
+                            }, 700);
+                        // 同时展示“请收货”
+                        $('.pop-07').slideDown(400);
+                        // 最后展示 next
+                        $('.next').fadeIn(700);
                     });
                 }
             },
         });
+
+        (function () {
+            // 绑定第八屏幕的事件
+            let hand08 = $('.hand-08');
+            $('.begin-shopping').hover(function () {
+                $('.btn-08-a').toggle();
+            });
+            $(document).on('mousemove', function (e) {
+                let x = e.pageX - hand08.width() / 2;
+                let y = e.pageY + 10;
+                y = Math.max(windowHeight - 449, y);
+                hand08.css({
+                    'left': x,
+                    'top': y
+                });
+            });
+            $('.again').on('click', function () {
+                $.fn.fullpage.moveTo(1);
+                $('img, .move').attr('style', '');
+            });
+        })();
+
+        (function () {
+            // 绑定 next 事件
+            $('.next').on('click', function () {
+                $.fn.fullpage.moveSectionDown();
+            });
+        })();
     });
 })(window, undefined);
