@@ -71,6 +71,15 @@
                             flag = true;
                         });
                         break;
+                    case 7:
+                        new Promise(resolve => {
+                            $('.star').animate({
+                                'width': 120
+                            }, 1500, () => resolve());
+                        }).then(() => {
+                            $('.good-07').fadeIn(700);
+                        });
+                        break;
                 }
             },
 
