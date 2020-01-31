@@ -1,3 +1,8 @@
+html, body, .section {
+    min-height: 600px;
+    min-width: 1000px;
+}
+
 /* 直接进入购物中心 */
 .go {
     position: fixed;
@@ -451,9 +456,48 @@
 }
 /* END 第七个屏幕 */
 
+/* START 第八个屏幕 */
 .section-8 {
     background: url("../images/ksgw.png");
 }
+
+.begin-shopping {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: 365px;
+}
+
+.btn-08-a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.again {
+    position: absolute;
+    bottom: 403px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    margin-left: 300px;
+    cursor: pointer;
+}
+
+.hand-08 {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+}
+/* END 第八个屏幕 */
 
 /* 小圆点导航 */
 #fp-nav ul li a span {

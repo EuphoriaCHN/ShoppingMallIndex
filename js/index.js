@@ -1,7 +1,6 @@
 ((window, undefined) => {
     $(function () {
         let windowHeight = $(window).height();
-        let flag = false; // 控制动画
 
         $('#fullpage').fullpage({
             navigation: true,
@@ -14,7 +13,6 @@
             afterLoad: function (anchorLink, index) {
                 switch (index) {
                     case 2:
-                        if (flag) break;
                         new Promise(resolve => {
                             // 将搜索框展示出来
                             $('.search').fadeIn(700, function () {
@@ -68,7 +66,6 @@
                             // 当“沙发”的搜索结果变大后，用单独的“沙发”图片和 cover 覆盖掉那个会掉下去的特殊的沙发
                             $('.shirt-cover').show();
                             $('.shirt-02').show();
-                            flag = true;
                         });
                         break;
                     case 7:
@@ -80,12 +77,30 @@
                             $('.good-07').fadeIn(700);
                         });
                         break;
+                    case 8:
+                        let hand08 = $('.hand-08');
+                        $('.begin-shopping').hover(function () {
+                            $('.btn-08-a').toggle();
+                        });
+                        $(document).on('mousemove', function (e) {
+                            let x = e.pageX - hand08.width() / 2;
+                            let y = e.pageY + 10;
+                            y = Math.max(windowHeight - 449, y);
+                            hand08.css({
+                                'left': x,
+                                'top': y
+                            });
+                        });
+                        $('.again').on('click', function () {
+                            $.fn.fullpage.moveTo(1);
+                            $('img, .move').attr('style', '');
+                        });
                 }
             },
 
             // 在刚刚滚动出去某个页面时触发
             onLeave: function (index, nextIndex, direction) {
-                if (index === 2 && nextIndex === 3 && flag) {
+                if (index === 2 && nextIndex === 3) {
                     new Promise(resolve => {
                         // 从第二个聘屏幕滑动到第三个屏幕时
                         // 位于第二个屏幕的沙发会掉下去
